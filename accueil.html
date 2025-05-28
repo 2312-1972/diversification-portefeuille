@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produit Structuré Horizon Sérénité</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for better aesthetics if needed */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4FD1C5; /* Teal accent */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3CBBB1; /* Darker Teal */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Max width for readability */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Base height */
+            max-height: 350px; /* Max height */
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #4FD1C5; /* Teal accent */
+            border-bottom: 2px solid #4FD1C5;
+        }
+        .section-title {
+            border-bottom: 2px solid #A0AEC0; /* Secondary Accent */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: #2D3748; /* Darker gray for titles */
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem; /* 24px */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .btn-primary {
+            background-color: #4FD1C5;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+        .btn-primary:hover {
+            background-color: #3CBBB1;
+        }
+        .btn-secondary {
+            background-color: #E2E8F0; /* Light gray */
+            color: #2D3748; /* Dark gray text */
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+        .btn-secondary.active {
+            background-color: #4FD1C5;
+            color: white;
+        }
+        .btn-secondary:hover:not(.active) {
+            background-color: #CBD5E0; /* Medium gray */
+        }
+        /* Ensure fonts are loaded */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-gradient-to-br from-stone-100 to-rose-100 text-slate-800 antialiased">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-teal-600">Horizon Sérénité</a>
+            <div class="space-x-4">
+                <a href="#profil" class="nav-link text-slate-700 pb-1">Profil</a>
+                <a href="#produit" class="nav-link text-slate-700 pb-1">Produit</a>
+                <a href="#sous-jacents-scenarios" class="nav-link text-slate-700 pb-1">Sous-jacents & Scénarios</a>
+                <a href="#risques-frais" class="nav-link text-slate-700 pb-1">Risques & Frais</a>
+                <a href="#conformite" class="nav-link text-slate-700 pb-1">Conformité</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+
+        <section id="profil" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold section-title">Accueil & Profil de l'Investisseur</h2>
+            <div class="card">
+                <p class="mb-4">Bienvenue dans l'exploration du produit structuré "Horizon Sérénité". Cette application est conçue pour vous aider à comprendre en détail cette solution d'investissement personnalisée pour Mme Dupont.</p>
+                <h3 class="text-xl font-semibold text-teal-700 mb-2">Profil de Mme Dupont</h3>
+                <ul class="list-disc list-inside space-y-1 text-slate-700">
+                    <li>Âge : 45 ans</li>
+                    <li>Capital disponible : 100 000 €</li>
+                    <li>Horizon d’investissement : 3 à 5 ans</li>
+                    <li>Objectifs financiers : Sécuriser une partie du capital, générer des rendements stables et réguliers, diversifier le portefeuille.</li>
+                    <li>Aversion au risque : Modérée, préfère une protection partielle du capital.</li>
+                    <li>Connaissance financière : Niveau intermédiaire.</li>
+                </ul>
+                <p class="mt-4">Un produit structuré comme "Horizon Sérénité" est adapté car il combine une protection du capital avec un potentiel de rendement lié aux marchés, correspondant à ses objectifs et à son profil de risque.</p>
+            </div>
+        </section>
+
+        <section id="produit" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold section-title">Le Produit "Horizon Sérénité"</h2>
+            <div class="card mb-6">
+                <h3 class="text-xl font-semibold text-teal-700 mb-2">Caractéristiques Générales</h3>
+                <ul class="list-disc list-inside space-y-1 text-slate-700">
+                    <li>Nom du Produit : Horizon Sérénité</li>
+                    <li>Capital Investi : 100 000 €</li>
+                    <li>Durée : 3 à 5 ans</li>
+                    <li>Protection du capital : 90% du capital initial garanti à l'échéance via la brique obligataire.</li>
+                </ul>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h4 class="text-lg font-semibold text-teal-700 mb-2">Brique Obligataire (Sécurité)</h4>
+                    <p class="text-slate-700 mb-2">Cette composante vise à protéger votre capital.</p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-700">
+                        <li>Allocation : 90 000 € (90% du capital)</li>
+                        <li>Support : Obligations d'État ou d'entreprises solides.</li>
+                        <li>Rendement Garanti : <strong>3% annuel fixe</strong> sur cette brique.</li>
+                        <li>Protection : Assure la récupération d'au moins 90% du capital initial à l'échéance.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4 class="text-lg font-semibold text-teal-700 mb-2">Brique Optionnelle (Potentiel)</h4>
+                    <p class="text-slate-700 mb-2">Cette composante offre un potentiel de rendement additionnel.</p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-700">
+                        <li>Allocation : 10 000 € (10% du capital)</li>
+                        <li>Sous-jacents : CAC 40 et Indice ESG.</li>
+                        <li>Mécanisme : Rendement additionnel si les indices dépassent des seuils prédéfinis (ex: +15% pour CAC 40, +12% pour Indice ESG par rapport à leur valeur initiale).</li>
+                        <li>Rendement potentiel : Jusqu'à <strong>6% annuel additionnel</strong> sur cette brique.</li>
+                    </ul>
+                </div>
+            </div>
+             <div class="card mt-6">
+                <h4 class="text-lg font-semibold text-teal-700 mb-2">Durée et Flexibilité</h4>
+                 <ul class="list-disc list-inside space-y-1 text-slate-700">
+                    <li>Durée : Alignée sur l'horizon de 3 à 5 ans de Mme Dupont.</li>
+                    <li>Sortie anticipée : Possible si la performance globale atteint 10% sur 2 ans (avec frais de sortie de 1%).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sous-jacents-scenarios" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold section-title">Sous-jacents & Scénarios de Rendement</h2>
+            <p class="mb-6 text-slate-700">Cette section présente les sous-jacents choisis pour la brique optionnelle et illustre les scénarios de rendement potentiels de votre investissement sur une période de 3 ans, après prise en compte des frais d'entrée (2000€) et des frais de gestion annuels (1000€/an). Le capital net investi initialement est donc de 98 000 €.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-teal-700 mb-2">Sous-jacent : CAC 40</h3>
+                    <p class="text-sm text-slate-600 mb-3">Indice des 40 plus grandes entreprises cotées à Paris. Croissance annuelle moyenne de 6% sur les 10 dernières années.</p>
+                    <div class="chart-container">
+                        <canvas id="cac40Chart"></canvas>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-center">Performance historique indicative (index 100).</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-teal-700 mb-2">Sous-jacent : Indice ESG</h3>
+                    <p class="text-sm text-slate-600 mb-3">Indice d'entreprises respectant des critères environnementaux, sociaux et de gouvernance. Croissance annuelle moyenne de 8% sur les 5 dernières années.</p>
+                    <div class="chart-container">
+                        <canvas id="esgChart"></canvas>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-center">Performance historique indicative (index 100).</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="text-xl font-semibold text-teal-700 mb-4">Scénarios de Rendement (sur 3 ans)</h3>
+                <div class="flex justify-center space-x-2 sm:space-x-4 mb-6">
+                    <button id="btnFavorable" class="btn-secondary active" onclick="showScenario('favorable')">Favorable</button>
+                    <button id="btnNeutre" class="btn-secondary" onclick="showScenario('neutre')">Neutre</button>
+                    <button id="btnDefavorable" class="btn-secondary" onclick="showScenario('defavorable')">Défavorable</button>
+                </div>
+
+                <div id="scenarioDetails" class="text-slate-700">
+                    </div>
+                <div class="chart-container mt-6 h-[250px] md:h-[300px]">
+                     <canvas id="scenarioChart"></canvas>
+                </div>
+                 <p class="text-xs text-slate-500 mt-2 text-center">Illustration du capital pour le scénario sélectionné.</p>
+            </div>
+        </section>
+
+        <section id="risques-frais" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold section-title">Risques & Frais</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-teal-700 mb-2">Principaux Risques</h3>
+                    <ul class="list-disc list-inside space-y-1 text-slate-700">
+                        <li><strong>Risque de marché :</strong> La performance des sous-jacents (CAC 40, Indice ESG) est incertaine. Si les seuils ne sont pas atteints, le rendement additionnel de la brique optionnelle ne sera pas versé.</li>
+                        <li><strong>Risque de capital :</strong> Le produit garantit 90% du capital à l'échéance. Il existe donc un risque de perte de 10% du capital en cas de scénario très défavorable non couvert par les rendements obligataires, bien que la structure vise à éviter cela.</li>
+                        <li><strong>Impact des frais :</strong> Les frais (entrée, gestion) réduisent le rendement net, surtout en cas de performance neutre ou faible de la brique optionnelle.</li>
+                        <li><strong>Risque de liquidité :</strong> Bien qu'une sortie anticipée soit possible sous conditions, elle est assortie de frais et n'est pas garantie.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-teal-700 mb-2">Structure des Frais</h3>
+                    <table class="w-full text-left text-slate-700">
+                        <thead>
+                            <tr>
+                                <th class="py-2">Type de Frais</th>
+                                <th class="py-2">Montant</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-slate-200">
+                                <td class="py-2">Frais d’entrée</td>
+                                <td class="py-2">2% du capital investi (2 000 €)</td>
+                            </tr>
+                            <tr class="border-t border-slate-200">
+                                <td class="py-2">Frais de gestion annuels</td>
+                                <td class="py-2">1% du capital investi (1 000 €/an)</td>
+                            </tr>
+                            <tr class="border-t border-slate-200">
+                                <td class="py-2">Frais de sortie anticipée</td>
+                                <td class="py-2">1% (si sortie avant maturité, sous conditions)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="conformite" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold section-title">Conformité & Conclusion</h2>
+            <div class="card">
+                <h3 class="text-xl font-semibold text-teal-700 mb-2">Conformité Réglementaire (MiFID II)</h3>
+                <p class="text-slate-700 mb-3">Le produit "Horizon Sérénité" est conçu pour être conforme à la directive MiFID II, assurant :</p>
+                <ul class="list-disc list-inside space-y-1 text-slate-700 mb-4">
+                    <li>Adaptation au profil de risque modéré de Mme Dupont.</li>
+                    <li>Transparence des coûts et des risques associés.</li>
+                    <li>Simplicité et pédagogie pour un investisseur de niveau intermédiaire.</li>
+                    <li>Protection du capital à hauteur de 90% via la brique obligataire.</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-teal-700 mb-2">Conclusion</h3>
+                <p class="text-slate-700">"Horizon Sérénité" offre un équilibre entre la sécurité d'une partie du capital et le potentiel de rendements attractifs. Il est structuré pour correspondre aux objectifs financiers et à l'appétence au risque de Mme Dupont. Une discussion approfondie est recommandée pour valider tous les aspects de cette proposition.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2025 Proposition d'Investissement. Informations fournies à titre indicatif.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Calculate offset for fixed header
+                    const headerOffset = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                    
+                    // Update active link state
+                    document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Active link highlighting on scroll
+        const sections = document.querySelectorAll('section');
+        // Moved navLinks declaration to a more accessible scope
+        const navLinks = document.querySelectorAll('nav a.nav-link'); 
+        window.onscroll = () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - document.querySelector('header').offsetHeight - 50; // Adjust offset as needed
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        };
+
+
+        // Chart data and configuration
+        const cac40Data = {
+            labels: Array.from({length: 10}, (_, i) => `Année ${i+1}`),
+            datasets: [{
+                label: 'Performance CAC 40 (Index 100)',
+                data: [100, 105, 110, 108, 115, 122, 128, 135, 140, 150], // Example data showing ~6% avg growth with some volatility
+                borderColor: '#4FD1C5',
+                backgroundColor: 'rgba(79, 209, 197, 0.1)',
+                fill: true,
+                tension: 0.1
+            }]
+        };
+
+        const esgData = {
+            labels: Array.from({length: 5}, (_, i) => `Année ${i+1}`),
+            datasets: [{
+                label: 'Performance Indice ESG (Index 100)',
+                data: [100, 108, 118, 125, 140], // Example data showing ~8% avg growth
+                borderColor: '#A0AEC0',
+                backgroundColor: 'rgba(160, 174, 192, 0.1)',
+                fill: true,
+                tension: 0.1
+            }]
+        };
+
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    ticks: { color: '#4A5568' } // slate-700
+                },
+                x: {
+                    ticks: { color: '#4A5568' }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: { color: '#2D3748' } // slate-800
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.y !== null) {
+                                label += context.parsed.y.toFixed(0);
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+        
+        let scenarioChartInstance;
+
+        function createChart(ctx, type, data, options) {
+            return new Chart(ctx, { type, data, options });
+        }
+        
+        const scenarioDetailsContent = {
+            favorable: {
+                title: "Scénario Favorable (Marché Haussier)",
+                description: "Les sous-jacents (CAC 40 et/ou Indice ESG) dépassent leurs seuils d'activation. Le rendement annuel combiné peut atteindre <strong>jusqu'à 9%</strong> (3% obligataire + 6% optionnel).",
+                capitalInitial: 100000,
+                capitalNetInvesti: 98000,
+                capitalFinalEstime: 121460,
+                plusValueNette: 21460,
+                rendementAnnuel: "Jusqu'à 9%"
+            },
+            neutre: {
+                title: "Scénario Neutre (Marché Stable)",
+                description: "Les sous-jacents n'atteignent pas leurs seuils. Seul le rendement de la brique obligataire (<strong>3% par an</strong>) est perçu.",
+                capitalInitial: 100000,
+                capitalNetInvesti: 98000,
+                capitalFinalEstime: 103820,
+                plusValueNette: 3820,
+                rendementAnnuel: "3%"
+            },
+            defavorable: {
+                title: "Scénario Défavorable (Marché Baissier)",
+                description: "Les sous-jacents performent mal. Le rendement de la brique obligataire (<strong>3% par an</strong>) est maintenu. La protection du capital à 90% est active.",
+                capitalInitial: 100000,
+                capitalNetInvesti: 98000,
+                capitalFinalEstime: 103820, // Same as neutral due to 3% bond yield covering fees and providing small gain
+                plusValueNette: 3820,      // Minimum guaranteed return from bond part after fees
+                rendementAnnuel: "3% (via brique obligataire)"
+            }
+        };
+
+        function showScenario(scenarioType) {
+            const details = scenarioDetailsContent[scenarioType];
+            const container = document.getElementById('scenarioDetails');
+            container.innerHTML = `
+                <h4 class="text-lg font-semibold text-teal-600 mb-2">${details.title}</h4>
+                <p class="mb-3">${details.description}</p>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div><strong>Capital initial :</strong></div><div>${details.capitalInitial.toLocaleString('fr-FR')} €</div>
+                    <div><strong>Capital net investi (après frais d'entrée) :</strong></div><div>${details.capitalNetInvesti.toLocaleString('fr-FR')} €</div>
+                    <div><strong>Rendement annuel brut estimé :</strong></div><div>${details.rendementAnnuel}</div>
+                    <div><strong>Capital final estimé (après 3 ans et frais de gestion) :</strong></div><div><strong>${details.capitalFinalEstime.toLocaleString('fr-FR')} €</strong></div>
+                    <div><strong>Plus-value nette estimée :</strong></div><div>${details.plusValueNette.toLocaleString('fr-FR')} €</div>
+                </div>
+            `;
+
+            // Update scenario chart
+            const scenarioChartCtx = document.getElementById('scenarioChart').getContext('2d');
+            const scenarioChartData = {
+                labels: ['Capital Initial', 'Capital Net Investi', 'Capital Final Estimé (3 ans)'],
+                datasets: [{
+                    label: `Capital (${details.title})`,
+                    data: [details.capitalInitial, details.capitalNetInvesti, details.capitalFinalEstime],
+                    backgroundColor: ['#A0AEC0', '#718096', '#4FD1C5'], // Gray, Darker Gray, Teal
+                    borderColor: ['#A0AEC0', '#718096', '#4FD1C5'],
+                    borderWidth: 1
+                }]
+            };
+             if(scenarioChartInstance) {
+                scenarioChartInstance.destroy();
+            }
+            scenarioChartInstance = createChart(scenarioChartCtx, 'bar', scenarioChartData, {
+                responsive: true,
+                maintainAspectRatio: false,
+                 scales: {
+                    y: { beginAtZero: true, ticks: { color: '#4A5568', callback: function(value) { return value.toLocaleString('fr-FR') + ' €';} } },
+                    x: { ticks: { color: '#4A5568' } }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y.toLocaleString('fr-FR') + ' €';
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Update active button
+            document.querySelectorAll('#sous-jacents-scenarios .btn-secondary').forEach(btn => btn.classList.remove('active'));
+            // Corrected ID from btnFavoravorable to btnFavorable
+            document.getElementById(`btn${scenarioType.charAt(0).toUpperCase() + scenarioType.slice(1)}`).classList.add('active');
+
+        }
+
+        window.onload = function() {
+            // Initialize charts
+            const cac40Ctx = document.getElementById('cac40Chart').getContext('2d');
+            createChart(cac40Ctx, 'line', cac40Data, chartOptions);
+
+            const esgCtx = document.getElementById('esgChart').getContext('2d');
+            createChart(esgCtx, 'line', esgData, chartOptions);
+            
+            // Show default scenario
+            showScenario('favorable');
+             // Set first nav link active by default
+            if(navLinks.length > 0) {
+                navLinks[0].classList.add('active');
+            }
+        };
+    </script>
+</body>
+</html>
