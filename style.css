@@ -1,7 +1,11 @@
  body {
             font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #99f2c8, #1f4037);
         }
-        
+        .logo{
+            background-color: #1f4037;
+            max-width: 150px;
+        }
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -80,5 +84,8 @@
         .btn-secondary:hover:not(.active) {
             background-color: #CBD5E0; 
         }
+         .h2clear { color:#99f2c8;
+        }
+
         
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');

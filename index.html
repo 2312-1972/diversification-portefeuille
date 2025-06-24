@@ -8,10 +8,16 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="./style.css">  
 </head>
-<body class="bg-gradient-to-br from-stone-100 to-rose-100 text-slate-800 antialiased">
+<body class="antialiased">
 
     <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+        
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center relative">
+            <div class="flex items-center">
+            <a href="https://portfolio-frederic-toppan.vercel.app/" target="_blank" rel="noopener noreferrer" class="mr-4">
+               <img src="./public/Shenzor.webp" alt="Logo de Frédéric Toppan" class=" w-auto rounded-full shadow-lg logo">
+             </a>
+                </div>
             <a href="#" class="text-2xl font-bold text-teal-600">Horizon Sérénité</a>
             <div class="space-x-4">
                 <a href="#profil" class="nav-link text-slate-700 pb-1">Profil</a>
@@ -125,7 +131,7 @@
         </section>
 
         <section id="risques-frais" class="mb-12 pt-16 -mt-16">
-            <h2 class="text-3xl font-semibold section-title">Risques & Frais</h2>
+            <h2 class="text-3xl h2clear section-title">Risques & Frais</h2>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="card">
                     <h3 class="text-xl font-semibold text-teal-700 mb-2">Principaux Risques</h3>
@@ -165,7 +171,7 @@
         </section>
 
         <section id="conformite" class="mb-12 pt-16 -mt-16">
-            <h2 class="text-3xl font-semibold section-title">Conformité & Conclusion</h2>
+            <h2 class="text-3xl h2clear section-title">Conformité & Conclusion</h2>
             <div class="card">
                 <h3 class="text-xl font-semibold text-teal-700 mb-2">Conformité Réglementaire (MiFID II)</h3>
                 <p class="text-slate-700 mb-3">Le produit "Horizon Sérénité" est conçu pour être conforme à la directive MiFID II, assurant :</p>
@@ -181,7 +187,7 @@
         </section>
     </main>
 
-    <footer class="bg-slate-800 text-white text-center p-6 mt-12">
+    <footer class=" text-white text-center p-6 mt-12">
         <p>&copy; 2025 Proposition d'Investissement. Informations fournies à titre indicatif.</p>
     </footer>
 <!-- defer pour telecharger le script en arrière plan -->
