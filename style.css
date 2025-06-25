@@ -76,16 +76,25 @@
             border-radius: 0.5rem;
             transition: background-color 0.3s ease;
             font-weight: 500;
+            box-shadow: 0 4px 8px #1f4037;
+            transition: background-color 0.3s ease, transform 0.2s ease-out, box-shadow 0.3s ease;
         }
         .btn-secondary.active {
-            background-color: #4FD1C5;
-            color: white;
+            background-color: #99f2c8;
+            color: #1f4037;
+            text-shadow: 1px 2px 4px #1f4037;
+            transform: scale(1.02);     
+            box-shadow: 0 5px 10px rgba(153, 242, 200, 0.8); /  
         }
         .btn-secondary:hover:not(.active) {
             background-color: #CBD5E0; 
+            transform: translateY(-2px);    
+            box-shadow: 0 6px 12px rgba(31, 64, 55, 0.6);   
         }
          .h2clear { color:#99f2c8;
         }
 
         
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        

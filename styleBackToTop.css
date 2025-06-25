@@ -1,0 +1,46 @@
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #99f2c8;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px #2b2c2c;
+  cursor: pointer;
+  transition: width 0.3s, border-radius 0.3s, background-color 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.icon {
+  font-size: 16px;
+  color: #1f4037;
+  transition: transform 0.3s;
+}
+
+.button:hover {
+  width: 140px;
+  border-radius: 50px;
+  background-color: 1f4037;
+}
+
+.button:hover .icon {
+  transform: translateY(-200%);
+}
+
+.button::before {
+  content: "Back to Top";
+  position: absolute;
+  color: #1f4037;
+  font-size: 0px;
+  transition: font-size 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+}

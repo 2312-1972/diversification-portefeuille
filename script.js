@@ -208,4 +208,26 @@
             if(navLinks.length > 0) {
                 navLinks[0].classList.add('active');
             }
+        ;
+         const backToTopBtn = document.getElementById('backToTopBtn');
+
+  // Cacher le bouton au chargement
+  backToTopBtn.style.display = 'none';
+
+  // Afficher / Cacher le bouton selon le scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTopBtn.style.display = 'flex';
+    } else {
+      backToTopBtn.style.display = 'none';
+    }
+  });
+
+  // Remonter en haut de la page au clic
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
         };
