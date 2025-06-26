@@ -84,6 +84,9 @@
             box-shadow: 0 4px 8px #1f4037;
             display: inline-block;
             transition: background-color 0.3s ease, transform 0.2s ease-out, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden; 
+            cursor: pointer;
         }
         .btn-secondary.active {
             background-color: #99f2c8;
@@ -96,7 +99,30 @@
             background-color: #CBD5E0; 
             transform: scale(1.08);
             box-shadow: 0 6px 12px rgba(31, 64, 55, 0.6);   
+            animation: pop 0.25s ease-out;
         }
+        @keyframes pop {
+            0%   { transform: scale(1); }
+            50%  { transform: scale(1.1); }
+            100% { transform: scale(1.08); }
+        }
+        .btn-secondary::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            opacity: 0.75;
+            background: rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+            animation: ripple-animation 0.6s ease-out;
+        }
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
          .h2clear { color:#99f2c8;
         }
 
