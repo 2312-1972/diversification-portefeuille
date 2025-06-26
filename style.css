@@ -10,13 +10,19 @@
         .logo{
             background-color: #3d8673;
             max-width: 150px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+             transition: transform 0.6s ease-in-out, background-color 0.3s ease;
             
         }
         .logo:hover{
             background-color: #18998c;
             transform:scale(1.5);
-            
+            }
+            /* Hover effet uniquement sur desktop (>=768px) */
+        @media (min-width: 768px) {
+        .logo:hover {
+            background-color: #18998c;
+            transform: scale(1.5) rotate(-360deg) translateX(100px);
+        }
         }
         ::-webkit-scrollbar {
             width: 8px;
