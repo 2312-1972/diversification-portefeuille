@@ -2,14 +2,21 @@
             font-family: 'Inter', sans-serif;
             background: linear-gradient(to bottom, #99f2c8, #1f4037);
         }
+        header{
+            padding-bottom: 50px;
+            padding-top: 30px;
+
+        }
         .logo{
             background-color: #3d8673;
             max-width: 150px;
             transition: transform 0.3s ease, background-color 0.3s ease;
+            
         }
         .logo:hover{
             background-color: #2c7c74;
-            transform:scale(1.5)
+            transform:scale(1.5);
+            
         }
         ::-webkit-scrollbar {
             width: 8px;
@@ -38,6 +45,11 @@
                 height: 350px;
                 max-height: 400px;
             }
+        }
+        .Navbar{
+            /* background-color: #2ec4b6;  */
+            padding: 20px;
+            background:  linear-gradient(to right, #3d8673, #2ec4b6);
         }
         .nav-link {
             color: #1f4037;
