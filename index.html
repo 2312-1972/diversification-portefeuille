@@ -271,6 +271,14 @@
         clickSound.play();
       });
     });
+
+    const backToTopBtn = document.getElementById('backToTopBtn');
+     backToTopBtn.addEventListener('click', () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
     document.querySelectorAll('.btn-secondary').forEach(btn => {
     btn.addEventListener('click', function (e) {
       const ripple = document.createElement('span');
