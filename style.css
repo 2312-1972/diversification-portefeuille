@@ -55,14 +55,14 @@
         .Navbar{
             /* background-color: #2ec4b6;  */
             padding: 20px;
-            background:  linear-gradient(to top, #e09b07, #cae0048a);
+            background:#2d6d5c;
         }
         .nav-link {
             color: #1f4037;
              }
         .nav-link:hover, .nav-link.active {
-            color: #0a6960; 
-            text-shadow: 0 6px 10px #99f2c8;
+            color: #68c5bc; 
+            text-shadow: 0 6px 10px white;
             }
         .section-title {
             border-bottom: 2px solid #A0AEC0; 
