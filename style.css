@@ -29,7 +29,6 @@
             border-radius: 10px; 
             padding: 10px; 
             box-shadow: 0 6px 8px #606361; 
-            font-size: 3rem;
             background: url('./public/image-mesh-gradient2.png') center;
             background-size: cover;
             background-clip: text;
@@ -37,6 +36,7 @@
             animation: animate 3s linear infinite   ;
             letter-spacing: 4px;
         }
+       
         @keyframes animate {
             to{background-position-x:-500px ;}
         }
