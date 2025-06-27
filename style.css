@@ -24,6 +24,22 @@
             transform: scale(1.5) rotate(-360deg) translateX(100px);
         }
         }
+        h1{
+            border: 1px solid; 
+            border-radius: 10px; 
+            padding: 10px; 
+            box-shadow: 0 6px 8px #606361; 
+            font-size: 3rem;
+            background: url('./public/image-mesh-gradient2.png') center;
+            background-size: cover;
+            background-clip: text;
+            color: transparent;
+            animation: animate 3s linear infinite   ;
+            letter-spacing: 4px;
+        }
+        @keyframes animate {
+            to{background-position-x:-500px ;}
+        }
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -53,8 +69,7 @@
             }
         }
         .Navbar{
-            /* background-color: #2ec4b6;  */
-            padding: 20px;
+           padding: 20px;
             background:#2d6d5c;
         }
         .nav-link {
